@@ -1,0 +1,59 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis version="3.28.8-Firenze">
+  <identifier>MALLA1X1_PB</identifier>
+  <parentidentifier></parentidentifier>
+  <language>SPA</language>
+  <type>dataset</type>
+  <title>Malla 1 x 1 km</title>
+  <abstract>Malla de 1 kilometro sobre ámbito terrestre y marino de Península y Baleares.
+
+La malla de 1 km se utiliza para representación espacial de información temática. Los límites de la malla exceden de las aguas marinas bajo soberanía o jurisdicción nacional, incluyendo la zona económica exclusiva y la plataforma continental por lo que, en ningún caso, deberá utilizarse la malla como delimitación de las mismas.</abstract>
+  <keywords vocabulary="Buscar claves">
+    <keyword>Sistema de cuadrículas geográficas</keyword>
+  </keywords>
+  <contact>
+    <contactAddress>
+      <type></type>
+      <address>Plaza San Juan de la Cruz, s/n - 3ª planta</address>
+      <city>Madrid</city>
+      <administrativearea></administrativearea>
+      <postalcode>28071</postalcode>
+      <country>España</country>
+    </contactAddress>
+    <name>Ruiz Franco, Blanca</name>
+    <organization>Ministerio de Agricultura, Alimentación y Medio Ambiente</organization>
+    <position>Jefa de Área de Banco de Datos de la Naturaleza</position>
+    <voice>+34 91 597 61 55</voice>
+    <fax></fax>
+    <email>brfranco@magrama.es</email>
+    <role></role>
+  </contact>
+  <links/>
+  <history>La malla de 1km se crea sobre una geodatabase de archivos con sistema de referencia ETRS89 en coordenadas UTM y tomando como punto de partida la malla de 10 km generada anteriormente, definiendo la condición de coordenadas en numeros enteros, y cubriendo todo el ámbito de trabajo definido (ámbito terrestre y marino de Península y Baleares). Los pasos seguidos son los siguientes: - Se crea una malla para cada huso geográfico, en total 5 mallas. - Cálculo de los centroides de cada cuadrícula de las mallas. - Densificación de las mallas con vértices cada 1m. - Transformación de coordenadas UTM a geográficas. - Corte de cada una de las mallas por sus husos correspondientes y unión de las mallas cortadas de cada huso para formar una única malla de 1km que cubre todo el ámbito de trabajo. - Comprobación topológica de la malla única. - Traspaso de la codificación de la malla de 10km a las nuevas mallas de 1km. - Verificación con la capa de latitud 40º de las cuadrículas codificadas como zona T y S. - Cálculo y asignación de nomenclatura y codificación a la malla 10km. - Exportar a SHP la malla de 1km unida y correctamente codificada, en coordenadas geográficas (debido al tamaño de la malla es necesario crear varios archivos para realizar la exportación completa por partes). - Transformar el SHPs exportado de coordenadas geográficas a coordenadas UTM H30. - Exportar SHPs_UTMH30 a coverages. - En ArcInfo, simplificar el número de vértices de las coverages. - Unión de los diferentes archivos que conforman la malla. - Exportar la malla unida en coverage a SHP definitivo de entrega (de la malla de 1km). - Paso final: Asignación de datos de la currícula antigua ED50 a las nuevas mallas: Se transforman las mallas antiguas de ED50_H30 a ETRS89_H30, y se obtienen sus centroides. Mediante uniones y selecciones espaciales se asigna la información de la malla antigua a su correspondiente cuadrícula de la nueva malla.- Se añade el campo Marino, que indica si el objeto es terrestre (0), marino (1) o otros paises (2).</history>
+  <history>Fuente de datos: Se elabora a partir de la malla 10 x 10 km creada anteriormente.</history>
+  <fees></fees>
+  <constraints type="Limitaciones de uso">No se aplican condiciones</constraints>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["RGSH2020 / UTM zone 30N",BASEGEOGCRS["RGSH2020",DATUM["Sonatrach Reference Frame 2020",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",10299]],CONVERSION["UTM zone 30N",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-3,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Oil and gas exploration and production."],AREA["Algeria - between 6°W and 0°W (of Greenwich), onshore and offshore."],BBOX[21.82,-6,37.01,0]],ID["EPSG",22230]]</wkt>
+      <proj4>+proj=utm +zone=30 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>63824</srsid>
+      <srid>520003824</srid>
+      <authid>EPSG:22230</authid>
+      <description>RGSH2020 / UTM zone 30N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial maxx="1485242.37000000011175871" minz="0" maxy="5348369.46989999990910292" miny="3694536.4232999999076128" dimensions="2" maxz="0" crs="EPSG:22230" minx="-796786.87549999996554106"/>
+    <temporal>
+      <period>
+        <start></start>
+        <end></end>
+      </period>
+    </temporal>
+  </extent>
+</qgis>

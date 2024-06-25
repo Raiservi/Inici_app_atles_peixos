@@ -1,0 +1,12 @@
+name: Inici_app_atles_peixos
+title: Inici_app_atles_peixos
+username: tracks
+account: tracks
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12233395
+bundleId: 8786996
+url: https://tracks.shinyapps.io/Inici_app_atles_peixos/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
